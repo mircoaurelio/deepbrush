@@ -9,7 +9,7 @@ Transformers.js 4.3.1: Hugging Face, Apache-2.0.
 Hugging Face jinja 0.5.10: MIT. Hugging Face tokenizers 0.2.0: Apache-2.0.
 ONNX Runtime Web 1.31.0-dev.20260914-8d85527a0: Microsoft, MIT; upstream third-party notices included.
 
-Generated samples: original text-only imagegen compositions for draped cloth, parkour, inclined wall, linen folds, statue and terracotta. The public release omits earlier close screenshot recreations and the source-photo-based car. Depth Anything V2 Small produces the supplied relative depth maps; normals and combined maps use Mapshroom utilities. Hashes and dimensions are provided in each sample's provenance.json. See ASSET_PROVENANCE.md for prompts and origin details. No claim is made that AI geometry is calibrated or that purely generated elements have exclusive copyright.
+Generated samples: original text-only imagegen compositions for draped cloth, parkour, inclined wall, linen folds, statue, terracotta and an ivory sports coupe. The public release omits earlier close screenshot recreations and the source-photo-based car. Every built-in photo has its own imagegen relative-depth interpretation. Normals and combined maps are derived from that depth with Mapshroom utilities. Depth Anything V2 Small remains available for user photos and regeneration. Hashes and dimensions are provided in each sample's provenance.json. See ASSET_PROVENANCE.md for prompts and origin details. No claim is made that AI geometry is calibrated or that purely generated elements have exclusive copyright.
 
 Coffee photograph: Rachel Michetti / Pikolo Espresso Bar, CC0, via scikit-image 0.25.2.
 https://scikit-image.org/docs/0.25.x/api/skimage.data.html#skimage.data.coffee

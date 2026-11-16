@@ -7,7 +7,13 @@ uniform vec2 u_anchor;
 float perspectiveScale(float depth){return (.5+1.5*depth)/1.25;}
 float footprintSupport(){return u_radius*1.6*(u_stamp>.5?length(vec2(1.,1./u_decalAspect)):1.)+3./u_resolution.y;}
 bool inFootprintSupport(vec2 uv,vec2 center){return length((uv-center)*vec2(u_resolution.x/u_resolution.y,1.))<=footprintSupport();}
-vec3 brushNormalAt(vec2 uv){vec3 n=normalAt(uv);return normalize(vec3(n.xy*u_relief,n.z));}
+vec3 brushNormalAt(vec2 uv){
+ // Follow surface-scale geometry, not noisy per-pixel normal estimates.
+ // Keep raw depth for occlusion so smoothing cannot bridge separate objects.
+ float filterPixels=clamp(u_radius*u_resolution.y*.25,1.,12.);
+ vec3 n=normalAtLevel(uv,log2(filterPixels));
+ return normalize(vec3(n.xy*u_relief,n.z));
+}
 vec2 tangentCoordinates(vec2 delta,vec3 n){
  // Clamp the plane, not its determinant: an independent determinant clamp
  // can enlarge the unforeshortened axis at grazing angles.

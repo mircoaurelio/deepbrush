@@ -5,7 +5,8 @@ const common=`precision highp float;
 in vec2 v_uv;out vec4 fragColor;
 uniform sampler2D u_photo,u_surface;
 uniform vec2 u_resolution;
-vec3 normalAt(vec2 uv){vec2 f=texture(u_surface,uv).rg*2.-1.;return normalize(vec3(f.x,f.y,max(.001,1.-abs(f.x)-abs(f.y))));}
+vec3 normalAtLevel(vec2 uv,float level){vec2 f=textureLod(u_surface,uv,level).rg*2.-1.;return normalize(vec3(f.x,f.y,max(.001,1.-abs(f.x)-abs(f.y))));}
+vec3 normalAt(vec2 uv){return normalAtLevel(uv,0.);}
 ${footprintGLSL}
 `;
 export const brush=`#version 300 es
@@ -20,7 +21,8 @@ void main(){
  if(!inFootprintSupport(v_uv,u_center)){fragColor=old;return;}
  vec2 delta=surfaceCoordinates(v_uv,u_center);
  float d=footprintDistance(delta);
- float coverage=1.-smoothstep(min(.999,u_hardness),1.,d);
+ float edgeWidth=max(fwidth(d)*.5,.5/(u_radius*u_resolution.y));
+ float coverage=1.-smoothstep(min(u_hardness,1.-edgeWidth),1.+edgeWidth,d);
  vec4 ink=vec4(u_color,1.);
  if(u_stamp>.5){vec2 duv=delta/vec2(u_radius*2.,u_radius*2./u_decalAspect)+.5;ink=texture(u_decal,duv);ink.rgb/=max(ink.a,.00001);coverage=float(all(greaterThanEqual(duv,vec2(0.)))&&all(lessThanEqual(duv,vec2(1.))))*ink.a;ink.rgb=mix(ink.rgb,u_color,u_foreground);}
  float alpha=clamp(coverage*u_opacity*surfaceMask(v_uv,u_anchor)*u_pointer.z,0.,1.);

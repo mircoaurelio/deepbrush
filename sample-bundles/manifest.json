@@ -6,29 +6,15 @@
       "file": "cloth.zip",
       "destination": "generated/cloth",
       "generated": true,
-      "sha256": "0015e0ffe04bd24eb617278b714b647c6797d81da9364c2928977c3cbd7084d6",
+      "sha256": "eb8f56ba1da7a2a02c39f5fd267d67bd96a4b35c53622bff21c8eb814431eb15",
       "entries": [
         "photo.png",
         "depth.png",
         "normal.png",
         "combined.png",
-        "README.txt",
-        "provenance.json"
-      ]
-    },
-    {
-      "id": "parkour",
-      "file": "parkour.zip",
-      "destination": "generated/parkour",
-      "generated": true,
-      "sha256": "a20d50f57612224f5e8965379e3a2e50d8814bbf95b9fb4cf9a60028ae737992",
-      "entries": [
-        "photo.png",
-        "depth.png",
-        "normal.png",
-        "combined.png",
-        "README.txt",
-        "provenance.json"
+        "depth-imagegen-original.png",
+        "provenance.json",
+        "README.txt"
       ]
     },
     {
@@ -36,12 +22,13 @@
       "file": "wall.zip",
       "destination": "generated/wall",
       "generated": true,
-      "sha256": "311a6620ee2479df0d6c244f00ad75e837b6fc4ae56946b34d036e85adaff468",
+      "sha256": "12c9c5864520d81a0c22c7da62fb33192bf4c2655d8b7a58e4b48d6d7918e4d2",
       "entries": [
         "photo.png",
         "depth.png",
         "normal.png",
         "combined.png",
+        "depth-imagegen-original.png",
         "provenance.json",
         "README.txt"
       ]
@@ -51,12 +38,13 @@
       "file": "fabric.zip",
       "destination": "generated/fabric",
       "generated": true,
-      "sha256": "360471ad14cd09378b6e41a6d9d8485a1b7e8506d4892eb3d2ebb870175bede9",
+      "sha256": "06254b3a65a89fbb434747facb3ef3d311a9d6a79f8ce314d2925e868964ecfc",
       "entries": [
         "photo.png",
         "depth.png",
         "normal.png",
         "combined.png",
+        "depth-imagegen-original.png",
         "provenance.json",
         "README.txt"
       ]
@@ -66,12 +54,13 @@
       "file": "statue.zip",
       "destination": "generated/statue",
       "generated": true,
-      "sha256": "7ada33354c943dcdb390542f067e13f80b17cbebe92f47153c79f11515872250",
+      "sha256": "5ba93db5c93609955c28b31a773832c56fc1fbf4138e5f3fb0b622db1daa9950",
       "entries": [
         "photo.png",
         "depth.png",
         "normal.png",
         "combined.png",
+        "depth-imagegen-original.png",
         "provenance.json",
         "README.txt"
       ]
@@ -81,27 +70,79 @@
       "file": "vase.zip",
       "destination": "generated/vase",
       "generated": true,
-      "sha256": "43fd102c1d9b6343205978e4895ee3c0d24c9d63490d1ed42023c049f255d49d",
+      "sha256": "4e5aa83c9fcbd944c65f06d9df4aff92abb1a27383cdaa187e451db5d73784c8",
       "entries": [
         "photo.png",
         "depth.png",
         "normal.png",
         "combined.png",
+        "depth-imagegen-original.png",
         "provenance.json",
         "README.txt"
       ]
     },
     {
-      "id": "cc0",
-      "file": "cc0.zip",
-      "destination": "",
-      "generated": false,
-      "sha256": "62498fc4bf33b695e59341894b0f347bfca47a8be244a67246c480371246ccc6",
+      "id": "parkour",
+      "file": "parkour.zip",
+      "destination": "generated/parkour",
+      "generated": true,
+      "sha256": "c11bc68143789a13b349cfcc55a14adfe619bf4669eb09ccb02107cf719a6c99",
       "entries": [
-        "coffee.png",
-        "faraday.jpg",
-        "depth/coffee.png",
-        "depth/faraday.png"
+        "photo.png",
+        "depth.png",
+        "normal.png",
+        "combined.png",
+        "depth-imagegen-original.png",
+        "provenance.json",
+        "README.txt"
+      ]
+    },
+    {
+      "id": "coffee",
+      "file": "coffee.zip",
+      "destination": "generated/coffee",
+      "generated": true,
+      "sha256": "3c1fb86f2a37ba7a0ec8c4cca93a89931a9559486ff2ac3dd24ea7a5c947c37d",
+      "entries": [
+        "photo.png",
+        "depth.png",
+        "normal.png",
+        "combined.png",
+        "depth-imagegen-original.png",
+        "provenance.json",
+        "README.txt"
+      ]
+    },
+    {
+      "id": "faraday",
+      "file": "faraday.zip",
+      "destination": "generated/faraday",
+      "generated": true,
+      "sha256": "2a75580a4bfad2b515b7408fc28b87e2c179bd3e2b424fddd036ba0b28b28705",
+      "entries": [
+        "photo.png",
+        "depth.png",
+        "normal.png",
+        "combined.png",
+        "depth-imagegen-original.png",
+        "provenance.json",
+        "README.txt"
+      ]
+    },
+    {
+      "id": "car",
+      "file": "car.zip",
+      "destination": "generated/car",
+      "generated": true,
+      "sha256": "24c4cf7f26ea64bcaf4f4393e913a8d922e2fb82626e16395dcbcaa10811120b",
+      "entries": [
+        "photo.png",
+        "depth.png",
+        "normal.png",
+        "combined.png",
+        "depth-imagegen-original.png",
+        "provenance.json",
+        "README.txt"
       ]
     }
   ]

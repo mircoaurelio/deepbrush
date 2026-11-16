@@ -2,7 +2,7 @@
 
 **By Mirco Aurelio · [Live demo](https://deepbrush.app) · [Mapshroom page](https://mapshroom.dev/deepbrush/)**
 
-An experimental browser editor that projects brushes, stamps, text and light onto estimated photo geometry. It opens on a draped-cloth study with a red brush. Images fit the available canvas without changing their aspect ratio.
+An experimental browser editor that projects brushes, stamps, text and light onto estimated photo geometry. It opens on a draped-cloth study with a red brush. Images fit the available canvas without changing their aspect ratio. All nine built-in photos, including the car, have a dedicated imagegen depth map with derived normals and a combined map. These are approximate geometry interpretations; matching dimensions do not guarantee pixel-accurate depth. User uploads and the Generate depth button use Depth Anything V2 Small locally.
 
 ## Independent implementation
 
@@ -31,7 +31,7 @@ The build compiles the readable depth-worker source and copies its matching ONNX
 npm run check
 ```
 
-This runs input/geometry tests, builds the site, and checks sample hashes, dimensions and byte-exact combined-map packing. After starting the preview, open `/tests/browser/deepbrush-gpu.html` for seven real-WebGL regression checks. A WebGL2-capable browser is required.
+This runs input/geometry tests, builds the site, and checks sample hashes, dimensions and byte-exact combined-map packing. After starting the preview, open `/tests/browser/deepbrush-gpu.html` for nine real-WebGL regression checks. A WebGL2-capable browser is required.
 
 ## Privacy and license
 

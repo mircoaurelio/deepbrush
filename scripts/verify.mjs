@@ -21,6 +21,16 @@ for(const item of manifest.bundles.filter(i=>i.generated)){
 }
 const html=await readFile(path.join(dist,'index.html'),'utf8');
 assert.ok(html.includes('Independent demo'));assert.ok(html.includes('https://github.com/mircoaurelio/deepbrush'));
-assert.ok(!html.includes('data-sample="car"'));assert.ok(html.includes('data-sample="cloth" class="active"'));
+assert.ok(html.includes('data-sample="car"'));assert.ok(html.includes('data-sample="cloth" class="active"'));
+const galleryIds=[...html.matchAll(/data-sample="([a-z-]+)"/g)].map(m=>m[1]).sort();
+assert.deepEqual(galleryIds,manifest.bundles.map(b=>b.id).sort(),'Every gallery photo must have a complete map bundle');
+for(const item of manifest.bundles){
+ const p=JSON.parse(await readFile(path.join(dist,'assets',item.destination,'provenance.json'),'utf8'));
+ assert.equal(p.depth.generator,'OpenAI image_gen');
+ assert.equal(p.depth.fittedPhotoSha256,p.files['photo.png'].sha256);
+ assert.match(p.depth.referencePhotoSha256,/^[a-f0-9]{64}$/);
+ const original=await readFile(path.join(dist,'assets',item.destination,'depth-imagegen-original.png'));
+ assert.equal(createHash('sha256').update(original).digest('hex'),p.depth.sourceSha256);
+}
 for(const name of ['JINJA-LICENSE.txt','TOKENIZERS-LICENSE.txt','ONNX-LICENSE.txt','ONNX-THIRD-PARTY-NOTICES.txt','TRANSFORMERS-LICENSE.txt'])assert.ok((await readFile(path.join(dist,'vendor',name))).length>100);
 console.log('Verified map hashes, dimensions, combined packing, default sample, source link and notices.');
