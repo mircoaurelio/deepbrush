@@ -1,0 +1,7 @@
+import {createServer} from 'node:http';
+import {readFile,stat} from 'node:fs/promises';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+const project=fileURLToPath(new URL('../',import.meta.url)),root=path.join(project,'dist'),port=Number(process.env.PORT)||5190;
+const mime={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.mjs':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.json':'application/json','.md':'text/plain; charset=utf-8','.txt':'text/plain; charset=utf-8','.png':'image/png','.jpg':'image/jpeg','.svg':'image/svg+xml','.wasm':'application/wasm','.zip':'application/zip'};
+createServer(async(req,res)=>{try{const url=new URL(req.url,'http://localhost'),decoded=decodeURIComponent(url.pathname),test=decoded.startsWith('/tests/browser/'),base=test?path.join(project,'tests/browser'):root,relative=test?decoded.slice('/tests/browser/'.length):decoded.slice(1);let file=path.resolve(base,relative);if(!file.startsWith(base+path.sep)&&file!==base){res.writeHead(403);return res.end();}if((await stat(file)).isDirectory())file=path.join(file,'index.html');res.writeHead(200,{'Content-Type':mime[path.extname(file)]||'application/octet-stream','Cache-Control':'no-store'});res.end(await readFile(file));}catch{res.writeHead(404);res.end('Not found');}}).listen(port,'127.0.0.1',()=>console.log(`Deepbrush: http://127.0.0.1:${port}`));

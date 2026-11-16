@@ -1,0 +1,21 @@
+Deepbrush — independent educational demo by Mirco Aurelio.
+
+This implementation is inspired by the publicly observable painting behavior of Adobe's Project Deep Brush demonstration: https://labs.adobe.com/sneaks/deep-brush . No Adobe source code was obtained, copied or decompiled. No affiliation, sponsorship or endorsement by Adobe is claimed. Adobe and other third-party names are used only to identify their respective projects.
+
+Original application code and the included Mapshroom geometry utilities: Copyright (c) 2026 Mirco Aurelio, MIT. The MIT grant does not relicense third-party libraries, models, fonts, photographs or rights in generated imagery. See LICENSE and THIRD_PARTY_NOTICES.md.
+
+Depth estimation: onnx-community/depth-anything-v2-small, Apache-2.0, revision 4472b7362082ad9968fee890ca0f1e5aca36b93d. https://huggingface.co/onnx-community/depth-anything-v2-small
+Transformers.js 4.3.1: Hugging Face, Apache-2.0.
+Hugging Face jinja 0.5.10: MIT. Hugging Face tokenizers 0.2.0: Apache-2.0.
+ONNX Runtime Web 1.31.0-dev.20260914-8d85527a0: Microsoft, MIT; upstream third-party notices included.
+
+Generated samples: original text-only imagegen compositions for draped cloth, parkour, inclined wall, linen folds, statue and terracotta. The public release omits earlier close screenshot recreations and the source-photo-based car. Depth Anything V2 Small produces the supplied relative depth maps; normals and combined maps use Mapshroom utilities. Hashes and dimensions are provided in each sample's provenance.json. See ASSET_PROVENANCE.md for prompts and origin details. No claim is made that AI geometry is calibrated or that purely generated elements have exclusive copyright.
+
+Coffee photograph: Rachel Michetti / Pikolo Espresso Bar, CC0, via scikit-image 0.25.2.
+https://scikit-image.org/docs/0.25.x/api/skimage.data.html#skimage.data.coffee
+Faraday photograph: AndyScott, CC0 1.0.
+https://commons.wikimedia.org/wiki/File:Royal_Institution,_bust_of_Michael_Faraday.jpg
+
+Typography: IBM Plex Sans and DM Sans, served remotely by Google Fonts. The app does not bundle their font binaries.
+
+Photographs are processed in the browser. The model is downloaded from Hugging Face; fonts load from Google Fonts. Hosting providers receive ordinary page and asset requests. The app does not upload user photos to an inference service.

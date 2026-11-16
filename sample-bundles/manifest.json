@@ -1,0 +1,108 @@
+{
+  "version": 1,
+  "bundles": [
+    {
+      "id": "cloth",
+      "file": "cloth.zip",
+      "destination": "generated/cloth",
+      "generated": true,
+      "sha256": "0015e0ffe04bd24eb617278b714b647c6797d81da9364c2928977c3cbd7084d6",
+      "entries": [
+        "photo.png",
+        "depth.png",
+        "normal.png",
+        "combined.png",
+        "README.txt",
+        "provenance.json"
+      ]
+    },
+    {
+      "id": "parkour",
+      "file": "parkour.zip",
+      "destination": "generated/parkour",
+      "generated": true,
+      "sha256": "a20d50f57612224f5e8965379e3a2e50d8814bbf95b9fb4cf9a60028ae737992",
+      "entries": [
+        "photo.png",
+        "depth.png",
+        "normal.png",
+        "combined.png",
+        "README.txt",
+        "provenance.json"
+      ]
+    },
+    {
+      "id": "wall",
+      "file": "wall.zip",
+      "destination": "generated/wall",
+      "generated": true,
+      "sha256": "311a6620ee2479df0d6c244f00ad75e837b6fc4ae56946b34d036e85adaff468",
+      "entries": [
+        "photo.png",
+        "depth.png",
+        "normal.png",
+        "combined.png",
+        "provenance.json",
+        "README.txt"
+      ]
+    },
+    {
+      "id": "fabric",
+      "file": "fabric.zip",
+      "destination": "generated/fabric",
+      "generated": true,
+      "sha256": "360471ad14cd09378b6e41a6d9d8485a1b7e8506d4892eb3d2ebb870175bede9",
+      "entries": [
+        "photo.png",
+        "depth.png",
+        "normal.png",
+        "combined.png",
+        "provenance.json",
+        "README.txt"
+      ]
+    },
+    {
+      "id": "statue",
+      "file": "statue.zip",
+      "destination": "generated/statue",
+      "generated": true,
+      "sha256": "7ada33354c943dcdb390542f067e13f80b17cbebe92f47153c79f11515872250",
+      "entries": [
+        "photo.png",
+        "depth.png",
+        "normal.png",
+        "combined.png",
+        "provenance.json",
+        "README.txt"
+      ]
+    },
+    {
+      "id": "vase",
+      "file": "vase.zip",
+      "destination": "generated/vase",
+      "generated": true,
+      "sha256": "43fd102c1d9b6343205978e4895ee3c0d24c9d63490d1ed42023c049f255d49d",
+      "entries": [
+        "photo.png",
+        "depth.png",
+        "normal.png",
+        "combined.png",
+        "provenance.json",
+        "README.txt"
+      ]
+    },
+    {
+      "id": "cc0",
+      "file": "cc0.zip",
+      "destination": "",
+      "generated": false,
+      "sha256": "62498fc4bf33b695e59341894b0f347bfca47a8be244a67246c480371246ccc6",
+      "entries": [
+        "coffee.png",
+        "faraday.jpg",
+        "depth/coffee.png",
+        "depth/faraday.png"
+      ]
+    }
+  ]
+}
