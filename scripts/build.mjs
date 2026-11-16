@@ -33,5 +33,4 @@ await build({entryPoints:[path.join(root,'src/depth.worker.js')],outfile:path.jo
 await mkdir(path.join(out,'vendor'),{recursive:true});
 for(const file of ['ort-wasm-simd-threaded.mjs','ort-wasm-simd-threaded.wasm'])await cp(path.join(ort,'dist',file),path.join(out,'vendor',file));
 for(const file of ['LICENSE','THIRD_PARTY_NOTICES.md','ASSET_PROVENANCE.md'])await cp(path.join(root,file),path.join(out,file));
-await writeFile(path.join(out,'_headers'),'/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n\n/*.html\n  Cache-Control: no-cache\n');
 console.log('Built independent Deepbrush demo with '+manifest.bundles.length+' verified sample bundles.');

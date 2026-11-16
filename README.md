@@ -33,15 +33,6 @@ npm run check
 
 This runs input/geometry tests, builds the site, and checks sample hashes, dimensions and byte-exact combined-map packing. After starting the preview, open `/tests/browser/deepbrush-gpu.html` for seven real-WebGL regression checks. A WebGL2-capable browser is required.
 
-## Publish to Cloudflare
-
-```sh
-npx wrangler login
-npm run deploy
-```
-
-The Worker is named `deepbrush` and serves `dist`. In Cloudflare Workers & Pages, connect the repository to this Worker for automatic builds, using `npm ci && npm run check` as the build command and `npx wrangler deploy` as the deploy command. Configure your own custom domain in Cloudflare; account IDs and credentials are not included. The production custom domain is https://deepbrush.app .
-
 ## Privacy and license
 
 Photo processing and inference run in the browser. User photos are not uploaded to an inference service. Model files load from Hugging Face and fonts from Google Fonts; those services and the site host receive ordinary network requests.

@@ -11,7 +11,7 @@ The root MIT license covers the original implementation only. These components r
 | ONNX Runtime upstream components | commit 8d85527a0 | vendor/ONNX-THIRD-PARTY-NOTICES.txt, copied intact from upstream; this comprehensive upstream file may cover components not present in the browser build |
 | Depth Anything V2 Small ONNX | revision 4472b7362082ad9968fee890ca0f1e5aca36b93d | Apache-2.0; model files download from https://huggingface.co/onnx-community/depth-anything-v2-small |
 
-Build tools (not part of the browser runtime) retain the licenses shipped by npm: esbuild (MIT), fflate (MIT), sharp (Apache-2.0 and its bundled native-library notices), Wrangler (Apache-2.0).
+Build tools (not part of the browser runtime) retain the licenses shipped by npm: esbuild (MIT), fflate (MIT), and sharp (Apache-2.0 and its bundled native-library notices).
 
 IBM Plex Sans and DM Sans are fetched from Google Fonts; their binaries are not redistributed in this repository. Their font licenses apply independently.
 
